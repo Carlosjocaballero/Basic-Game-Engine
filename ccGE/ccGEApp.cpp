@@ -1,6 +1,6 @@
+#include "pch.h"
 #include "ccGEApp.h"
 #include "CCGEUtil.h"
-#include <iostream>
 
 namespace ccGE
 {
@@ -12,6 +12,7 @@ namespace ccGE
 	void ccGEApp::Run() 
 	{
 		CCGE_LOG("CCGE Running..");
+
 		while (true)
 		{
 			onUpdate();
