@@ -2,3 +2,4 @@
 
 #include "ccGEApp.h"
 #include "ccGEUtil.h"
+#include "ccGEWindow.h"

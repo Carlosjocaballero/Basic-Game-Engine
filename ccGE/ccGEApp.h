@@ -2,7 +2,7 @@
 
 #include "ccGEUtil.h"
 
-namespace ccGE 
+namespace ccGE  
 {
 	class CCGE_API ccGEApp
 	{

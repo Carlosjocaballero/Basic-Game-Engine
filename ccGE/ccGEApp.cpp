@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "ccGEApp.h"
 #include "CCGEUtil.h"
+#include "ccGEWindow.h"
 
 namespace ccGE
 {
@@ -13,9 +14,19 @@ namespace ccGE
 	{
 		CCGE_LOG("CCGE Running..");
 
+		ccGEWindow::Init();
+		ccGEWindow::GetWindow->Create(600, 400, "TestWindow");
+
+
+
+
 		while (true)
 		{
+			ccGEWindow::GetWindow->swapBuffers();
+
 			onUpdate();
 		}
+
+		
 	}
 }
