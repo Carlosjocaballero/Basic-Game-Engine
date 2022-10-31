@@ -10,7 +10,7 @@ namespace ccGE
 	public:
 
 		static void Init();
-		static WindowImplementation* GetWindow();
+		static ccGEWindow* GetWindow();
 
 		virtual void Create(int width, int height, const std::string& windowName);
 		virtual void SwapBuffers();

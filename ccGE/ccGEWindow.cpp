@@ -3,6 +3,8 @@
 #include "GLFWcode/GLFWimplementation.h"
 
 namespace ccGE {
+
+	ccGEWindow::ccGEWindow() {};
 	
 	void ccGEWindow::Init() 
 	{
@@ -22,9 +24,9 @@ namespace ccGE {
 	}
 	
 	
-	WindowImplementation* ccGEWindow::GetWindow()
+	ccGEWindow* ccGEWindow::GetWindow()
 	{
-		return mInstance->mImplementation;
+		return mInstance;
 	}
 
 	void ccGE::ccGEWindow::Create(int width, int height, const std::string& windowName)

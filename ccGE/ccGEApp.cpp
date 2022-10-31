@@ -15,14 +15,14 @@ namespace ccGE
 		CCGE_LOG("CCGE Running..");
 
 		ccGEWindow::Init();
-		ccGEWindow::GetWindow->Create(600, 400, "TestWindow");
+		ccGEWindow::GetWindow()->Create(600, 400, "TestWindow");
 
 
 
 
 		while (true)
 		{
-			ccGEWindow::GetWindow->swapBuffers();
+			ccGEWindow::GetWindow()->SwapBuffers();
 
 			onUpdate();
 		}
