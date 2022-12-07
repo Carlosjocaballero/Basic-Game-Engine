@@ -1,5 +1,6 @@
 #pragma once
 
+#include "pch.h"
 #include "ccGEUtil.h"
 
 namespace ccGE  
@@ -9,6 +10,8 @@ namespace ccGE
 	public:
 		virtual void onUpdate();
 		void Run();
+	private: 
+		std::chrono::milliseconds mFrameDuration;
 	};
 }
 

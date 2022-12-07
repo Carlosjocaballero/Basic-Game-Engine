@@ -14,10 +14,11 @@ namespace ccGE {
 		void Active();
 
 
-		void ProvideValues(const std::string& valueName, const std::vector<float>& vals);
-		void ProvideValues(std::string&& valueName, const std::vector<float>& vals);
+		void ProvideFloatValues(const std::string& valueName, const std::vector<float>& vals);
+		void ProvideFloatValues(std::string&& valueName, std::vector<float>&& vals);
 
 	private:
-		ShaderImplementation* mImplementation;
+		ShaderImplementation* mImplementation{nullptr};
+
 	};
 }

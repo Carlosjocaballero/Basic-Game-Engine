@@ -140,10 +140,13 @@ namespace ccGE {
 		{
 		case 1:
 			glUniform1f(location, vals[0]);
+			break;
 		case 2:
 			glUniform2f(location, vals[0], vals[1]);
+			break;
 		case 3:
 			glUniform3f(location, vals[0], vals[1], vals[2]);
+			break;
 		case 4:
 			glUniform4f(location, vals[0], vals[1], vals[2], vals[3]);
 			break;
@@ -151,7 +154,7 @@ namespace ccGE {
 			CCGE_LOG("ERROR: Shader values must be vectors of size 1-4");
 		}
 	}
-	void OpenGLShader::ProvideValues(std::string&& valueName, const std::vector<float>& vals)
+	void OpenGLShader::ProvideValues(std::string&& valueName,std::vector<float>&& vals)
 	{
 		GLint location{ glGetUniformLocation(mShaderProg, valueName.c_str()) };
 		

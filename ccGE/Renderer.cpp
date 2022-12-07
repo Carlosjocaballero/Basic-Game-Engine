@@ -1,17 +1,34 @@
 #include "pch.h"
 #include "Renderer.h"
+#include "OpenGLCode/OpenGLRenderer.h"
 
 namespace ccGE {
 	void Renderer::Init()
 	{
-		if (mInstance != nullptr) {
+		if (mInstance == nullptr) {
 			mInstance = new Renderer;
 		}
 	}
 
+	Renderer* Renderer::GetRenderer()
+	{
+		return mInstance;
+	}
+
+	void Renderer::Draw(Picture& pic, int x, int y, int z)
+	{
+
+		GetRenderer()->mImplementation->Draw(pic, x, y, z, GetRenderer()->mDefaultShader);
+	}
+
 	void Renderer::Draw(Picture& pic, int x, int y, int z, Shader& shader)
 	{
-		mImplementation->Draw(pic, x, y, z, shader);
+		GetRenderer()->mImplementation->Draw(pic, x, y, z, shader);
+	}
+
+	void Renderer::Clear()
+	{
+		GetRenderer()->mImplementation->Clear();
 	}
 
 	Renderer::Renderer()

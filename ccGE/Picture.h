@@ -11,7 +11,7 @@ namespace ccGE {
 
 		// We use double reference to be able to accept a raw 
 		// string inside the constructor
-		Picture(std::string&& sourceFile);
+		Picture(const std::string&& sourceFile);
 
 
 		int GetHeight() const;

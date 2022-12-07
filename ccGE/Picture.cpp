@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "Picture.h"
+#include "OpenGLCode/OpenGLPicture.h"
 
 namespace ccGE {
 	Picture::Picture(const std::string& sourceFile)
@@ -21,11 +22,11 @@ namespace ccGE {
 	}
 	int Picture::GetHeight() const
 	{
-		return mImplementation->getHeight();
+		return mImplementation->GetHeight();
 	}
 	int Picture::GetWidth() const
 	{
-		return mImplementation->getWidth();
+		return mImplementation->GetWidth();
 	}
 	void Picture::Activate()
 	{

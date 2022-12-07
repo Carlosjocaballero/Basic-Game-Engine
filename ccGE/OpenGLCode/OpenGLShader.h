@@ -11,7 +11,7 @@ namespace ccGE {
 		virtual void Activate() override;
 
 		virtual void ProvideValues(const std::string& valueName, const std::vector<float>& vals) override;
-		virtual void ProvideValues(std::string&& valueName, const std::vector<float>& vals) override;
+		virtual void ProvideValues(std::string&& valueName, std::vector<float>&& vals) override;
 
 	private:
 		unsigned int mShaderProg{ 0 };

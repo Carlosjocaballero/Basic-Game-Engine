@@ -1,11 +1,12 @@
 #pragma once
 
-#include "RendererImplementation.h"
+#include "../RendererImplementation.h"
 
 namespace ccGE {
-	class OpenGLRendered : public RendererImplementation {
+	class OpenGLRenderer : public RendererImplementation {
 	public:
+		OpenGLRenderer();
 		virtual void Draw(Picture& pic, int x, int y, int z, Shader& shader) override;
-	private:
+		virtual void Clear() override;
 	};
 }

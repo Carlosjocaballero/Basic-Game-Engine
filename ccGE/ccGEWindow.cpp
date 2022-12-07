@@ -32,11 +32,23 @@ namespace ccGE {
 	void ccGE::ccGEWindow::Create(int width, int height, const std::string& windowName)
 	{
 		mImplementation->Create(width, height, windowName);
+		mWidth = width;
+		mHeight = height;
 	}
 
 	void ccGEWindow::SwapBuffers()
 	{
 		mImplementation->SwapBuffers();
+	}
+
+	int ccGEWindow::GetWidth() const
+	{
+		return mWidth;
+	}
+
+	int ccGEWindow::GetHeight() const
+	{
+		return mHeight;
 	}
 
 }

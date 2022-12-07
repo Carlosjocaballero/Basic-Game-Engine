@@ -2,7 +2,7 @@
 #include "ccGEUtil.h"
 #include "Shader.h"
 #include "Picture.h"
-#include "RendererImplementation.h";
+#include "RendererImplementation.h"
 
 namespace ccGE {
 	class CCGE_API Renderer 
@@ -10,18 +10,22 @@ namespace ccGE {
 	public:
 
 		static void Init();
+		static Renderer* GetRenderer();
 		
-		static void Draw(Picture& pic, int x, int y, int z, Shader& shader = mDefaultShader);
+		static void Draw(Picture& pic, int x, int y, int z);
+		static void Draw(Picture& pic, int x, int y, int z, Shader& shader);
+
+		static void Clear();
 
 
 	private:
-		inline static Renderer* mInstance{ nullptr };
+		inline static Renderer* mInstance {nullptr};
 
 		RendererImplementation* mImplementation;
 
 		Renderer();
 
-		inline static Shader mDefaultShader{ "Assets/Shaders/defaultCCGEVertex.glsl",
+		Shader mDefaultShader{ "Assets/Shaders/defaultCCGEVertex.glsl",
 		"Assets/Shaders/defaultCCGEFragment.glsl" };
 	};
 }
