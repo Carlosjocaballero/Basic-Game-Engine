@@ -51,5 +51,15 @@ namespace ccGE {
 		return mHeight;
 	}
 
+	void ccGEWindow::SetKeyPressedCallback(const std::function<void(const KeyPressedEvent&)>& keyPressedCallback)
+	{
+		mImplementation->SetKeyPressedCallback(keyPressedCallback);
+	}
+
+	void ccGEWindow::SetKeyReleasedCallBack(const std::function<void(const KeyReleasedEvent&)>& keyReleasedCallback)
+	{
+		mImplementation->SetKeyReleasedCallback(keyReleasedCallback);
+	}
+
 }
 

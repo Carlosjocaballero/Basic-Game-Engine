@@ -53,6 +53,7 @@ namespace ccGE {
 			CCGE_LOG("ERROR::SHADER::FRAGMENT::COMPILATION_FAILED\n");
 		}
 
+		mShaderProg = glCreateProgram();
 		glAttachShader(mShaderProg, vertexShader);
 		glAttachShader(mShaderProg, fragmentShader);
 		glLinkProgram(mShaderProg);
@@ -157,22 +158,30 @@ namespace ccGE {
 	void OpenGLShader::ProvideValues(std::string&& valueName,std::vector<float>&& vals)
 	{
 		GLint location{ glGetUniformLocation(mShaderProg, valueName.c_str()) };
-		
+
 		Activate();
 
 		switch (vals.size())
 		{
 		case 1:
 			glUniform1f(location, vals[0]);
+			break;
 		case 2:
 			glUniform2f(location, vals[0], vals[1]);
+			break;
 		case 3:
 			glUniform3f(location, vals[0], vals[1], vals[2]);
+			break;
 		case 4:
 			glUniform4f(location, vals[0], vals[1], vals[2], vals[3]);
 			break;
 		default:
 			CCGE_LOG("ERROR: Shader values must be vectors of size 1-4");
 		}
+	}
+	
+	OpenGLShader::~OpenGLShader()
+	{
+		glDeleteProgram(mShaderProg);
 	}
 }

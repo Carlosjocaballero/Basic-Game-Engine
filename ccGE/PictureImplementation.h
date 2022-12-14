@@ -8,5 +8,7 @@ namespace ccGE {
 		virtual int GetHeight() const = 0;
 		virtual int GetWidth() const = 0;
 		virtual void Activate() = 0;
+
+		virtual ~PictureImplementation() {};
 	};
 }

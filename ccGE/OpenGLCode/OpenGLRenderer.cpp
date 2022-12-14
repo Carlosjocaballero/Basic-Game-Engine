@@ -28,8 +28,8 @@ namespace ccGE {
 
 		unsigned int VBO, VAO, EBO;
 		glGenVertexArrays(1, &VAO);
-		glGenBuffers(1, &VBO);
 		glGenBuffers(1, &EBO);
+		glGenBuffers(1, &VBO);
 		glBindVertexArray(VAO);
 
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
@@ -53,6 +53,10 @@ namespace ccGE {
 		shader.ProvideFloatValues("screenSize", {(float)width, (float)height});
 
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+
+		glDeleteVertexArrays(1, &VAO);
+		glDeleteBuffers(1, &VBO);
+		glDeleteBuffers(1, &EBO);
 	}
 	void OpenGLRenderer::Clear()
 	{

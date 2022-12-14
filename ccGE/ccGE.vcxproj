@@ -141,7 +141,9 @@
     <ClInclude Include="ccGEApp.h" />
     <ClInclude Include="ccGEUtil.h" />
     <ClInclude Include="ccGEWindow.h" />
+    <ClInclude Include="Event.h" />
     <ClInclude Include="GLFWcode\GLFWimplementation.h" />
+    <ClInclude Include="Keys.h" />
     <ClInclude Include="OpenGLCode\OpenGLPicture.h" />
     <ClInclude Include="OpenGLCode\OpenGLRenderer.h" />
     <ClInclude Include="OpenGLCode\OpenGLShader.h" />
@@ -157,6 +159,7 @@
   <ItemGroup>
     <ClCompile Include="ccGEApp.cpp" />
     <ClCompile Include="ccGEWindow.cpp" />
+    <ClCompile Include="Event.cpp" />
     <ClCompile Include="GLFWcode\GLFWimplementation.cpp" />
     <ClCompile Include="OpenGLCode\OpenGLPicture.cpp" />
     <ClCompile Include="OpenGLCode\OpenGLRenderer.cpp" />

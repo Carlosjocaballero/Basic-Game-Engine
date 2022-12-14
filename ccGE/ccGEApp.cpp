@@ -9,7 +9,15 @@
 
 namespace ccGE
 {
-	void ccGEApp::onUpdate() 
+	ccGEApp::ccGEApp()
+	{
+		ccGEWindow::Init();
+		ccGEWindow::GetWindow()->Create(1000, 800, "TextWindow");
+
+		Renderer::Init();
+	}
+
+	void ccGEApp::onUpdate()
 	{
 
 	}
@@ -18,22 +26,24 @@ namespace ccGE
 	{
 		CCGE_LOG("CCGE Running..");
 
-		ccGEWindow::Init();
-		ccGEWindow::GetWindow()->Create(600, 400, "TestWindow");
+		mNextFrameTime = std::chrono::steady_clock::now() + mFrameDuration;
 
 		Picture pic{ "Assets/Textures/test.png" };
-
-		Renderer::Init();
 
 		while (true)
 		{
 			Renderer::Clear();
+
+			onUpdate();
 			
-			Renderer::Draw(pic, 100, 100, 1);
+			Renderer::Draw(pic, 200, 200, 1);
+
+			std::this_thread::sleep_until(mNextFrameTime);
 
 			ccGEWindow::GetWindow()->SwapBuffers();
 
-			onUpdate();
+			mNextFrameTime = std::chrono::steady_clock::now() + mFrameDuration;
+
 		}
 
 		

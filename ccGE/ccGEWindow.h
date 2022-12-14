@@ -2,6 +2,7 @@
 #include "ccGEUtil.h"
 #include "pch.h"
 #include "WindowImplementation.h"
+#include "Event.h"
 
 namespace ccGE
 {
@@ -17,6 +18,9 @@ namespace ccGE
 
 		int GetWidth() const;
 		int GetHeight() const;
+
+		void SetKeyPressedCallback(const std::function<void(const KeyPressedEvent&)>& keyPressedCallback);
+		void SetKeyReleasedCallBack(const std::function<void(const KeyReleasedEvent&)>& keyReleasedCallback);
 
 		
 	private:

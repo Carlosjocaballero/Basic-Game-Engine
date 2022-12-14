@@ -9,6 +9,8 @@ namespace ccGE {
 		virtual int GetHeight() const override;
 		virtual int GetWidth() const override;
 		virtual void Activate() override;
+
+		~OpenGLPicture();
 	private:
 		unsigned int mImage{ 0 };
 		int mWidth{ 0 };
