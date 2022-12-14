@@ -16,9 +16,16 @@ else()
 endif()
 
 add_definitions(-DCCGE_DEBUG)
+add_definitions(-DCCGE_OPENGL)
 
 add_subdirectory(Game)
 add_subdirectory(ccGE)
 add_subdirectory(glfw)
+add_subdirectory(glad)
+add_subdirectory(stbi)
 
 set(VS_STARTUP_PROJECT Game)
+
+file(COPY Game/Assets DESTINATION ${PROJECT_BINARY_DIR}/Game)
+file(COPY Game/Assets DESTINATION ${PROJECT_BINARY_DIR}/Debug)
+file(COPY Game/Assets DESTINATION ${PROJECT_BINARY_DIR}/Release)

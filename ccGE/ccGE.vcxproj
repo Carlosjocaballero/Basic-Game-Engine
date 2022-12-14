@@ -102,12 +102,12 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>CCGE_LIB;CCGE_WINDOWS;CCGE_DEBUG</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CCGE_LIB;CCGE_WINDOWS;CCGE_OPENGL;CCGE_DEBUG</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)glad\include;$(SolutionDir)ccGE;$(SolutionDir)glfw\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)stbi;$(SolutionDir)glad\include;$(SolutionDir)ccGE;$(SolutionDir)glfw\include</AdditionalIncludeDirectories>
       <AdditionalUsingDirectories>%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
     </ClCompile>
     <Link>
@@ -121,12 +121,12 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>CCGE_LIB;CCGE_WINDOWS</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CCGE_LIB;CCGE_WINDOWS;CCGE_OPENGL;</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)glad\include;$(SolutionDir)ccGE;$(SolutionDir)glfw\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)stbi;$(SolutionDir)glad\include;$(SolutionDir)ccGE;$(SolutionDir)glfw\include</AdditionalIncludeDirectories>
       <AdditionalUsingDirectories>%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
     </ClCompile>
     <Link>
@@ -141,18 +141,36 @@
     <ClInclude Include="ccGEApp.h" />
     <ClInclude Include="ccGEUtil.h" />
     <ClInclude Include="ccGEWindow.h" />
+    <ClInclude Include="Event.h" />
     <ClInclude Include="GLFWcode\GLFWimplementation.h" />
+    <ClInclude Include="Keys.h" />
+    <ClInclude Include="OpenGLCode\OpenGLPicture.h" />
+    <ClInclude Include="OpenGLCode\OpenGLRenderer.h" />
+    <ClInclude Include="OpenGLCode\OpenGLShader.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="Picture.h" />
+    <ClInclude Include="PictureImplementation.h" />
+    <ClInclude Include="Renderer.h" />
+    <ClInclude Include="RendererImplementation.h" />
+    <ClInclude Include="Shader.h" />
+    <ClInclude Include="ShaderImplementation.h" />
     <ClInclude Include="WindowImplementation.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ccGEApp.cpp" />
     <ClCompile Include="ccGEWindow.cpp" />
+    <ClCompile Include="Event.cpp" />
     <ClCompile Include="GLFWcode\GLFWimplementation.cpp" />
+    <ClCompile Include="OpenGLCode\OpenGLPicture.cpp" />
+    <ClCompile Include="OpenGLCode\OpenGLRenderer.cpp" />
+    <ClCompile Include="OpenGLCode\OpenGLShader.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Picture.cpp" />
+    <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="Shader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\glad\glad.vcxproj">
@@ -160,6 +178,9 @@
     </ProjectReference>
     <ProjectReference Include="..\glfw\build\src\glfw.vcxproj">
       <Project>{f6d0a703-017f-33d1-a281-6004fb35d8f5}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\stbi\stbi.vcxproj">
+      <Project>{103f3a86-b430-4dbb-9244-cfca4a525121}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
