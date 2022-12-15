@@ -9,6 +9,7 @@ set(SOURCE_FILES
 	ccGEApp.cpp
 	ccGEWindow.cpp
 	GLFWcode/GLFWimplementation.cpp
+	Unit.cpp
    )
 
 set(HEADER_FILES
@@ -28,6 +29,7 @@ set(HEADER_FILES
 	ccGEWindow.h
 	WindowImplementation.h
 	GLFWcode/GLFWimplementation.h
+	Unit.h
    )
 
 add_library(ccGE SHARED ${SOURCE_FILES} ${HEADER_FILES})

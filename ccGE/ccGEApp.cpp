@@ -6,6 +6,7 @@
 #include "stb_image.h"
 #include "Picture.h"
 #include "Renderer.h"
+#include "Keys.h"
 
 namespace ccGE
 {
@@ -28,7 +29,6 @@ namespace ccGE
 
 		mNextFrameTime = std::chrono::steady_clock::now() + mFrameDuration;
 
-		Picture pic{ "Assets/Textures/test.png" };
 
 		while (true)
 		{
@@ -36,7 +36,6 @@ namespace ccGE
 
 			onUpdate();
 			
-			Renderer::Draw(pic, 200, 200, 1);
 
 			std::this_thread::sleep_until(mNextFrameTime);
 
