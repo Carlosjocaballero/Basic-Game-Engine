@@ -1,4 +1,7 @@
 The rule of the game is simple: Don't get hit by any enemies!
 
 
-In my game the player is able to move from top to bottom on the left side of the screen. Different enemies spawn from the right and shoot their bodies straight forward from a random location. Each enemy the player dodges increases the speed of the next spawning enemy, thus the game's difficulty increases. The texture and location of spawn for each enemy is chosen at random. If the player is hit it is game over. 
+In my game the player is able to move from top to bottom on the left side of the screen. Different enemies spawn from the right and 
+shoot their bodies straight forward from a random location. Each enemy the player dodges increases the speed of the next spawning enemy, 
+thus the game's difficulty increases. The texture and location of spawn for each enemy is chosen at random. If the player is hit it is 
+game over. 
