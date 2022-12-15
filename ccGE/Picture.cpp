@@ -30,5 +30,6 @@ namespace ccGE {
 	}
 	void Picture::Activate()
 	{
+		return mImplementation->Activate();
 	}
 }

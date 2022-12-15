@@ -34,7 +34,7 @@ namespace ccGE
 					Callbacks* userPointer{ (Callbacks*)glfwGetWindowUserPointer(window) };
 
 					KeyPressedEvent event{ key };
-					userPointer->keyPressedCallback;
+					userPointer->keyPressedCallback(event);
 				}
 				else if (action == GLFW_RELEASE)
 				{

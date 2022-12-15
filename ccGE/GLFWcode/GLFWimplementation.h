@@ -21,7 +21,8 @@ namespace ccGE
 	private:
 		GLFWwindow* mWindow{ nullptr };
 
-		struct Callbacks {
+		struct Callbacks 
+		{
 			std::function<void(const KeyPressedEvent&)> keyPressedCallback{ [](const KeyPressedEvent&) {} };
 			std::function<void(const KeyReleasedEvent&)> keyReleasedCallback{ [](const KeyReleasedEvent&) {} };
 		} mCallbacks;
