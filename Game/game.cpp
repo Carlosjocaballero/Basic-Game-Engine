@@ -25,13 +25,15 @@ public:
 		ccGE::Renderer::Draw(background, 0, 0, 1);
 		player.setCoord(p_x, p_y, 1);
 		enemy.setCoord(e_x, e_y, 1);
-		ccGE::Picture defaultPlayer{ "Assets/Textures/lookingRight.png" };
-		ccGE::Renderer::Draw(defaultPlayer, p_x, p_y, 1);
+		if (m_State == CharState::STILL) {
+			ccGE::Picture defaultPlayer{ "Assets/Textures/lookingRight.png" };
+			ccGE::Renderer::Draw(defaultPlayer, p_x, p_y, 1);
+		}
 		if (gameIsOver) {
 			while (true) {}
 		}
 
-		if (m_State == CharState::MOVE_UP && player.GetY() < 738) {
+		if (m_State == CharState::MOVE_UP && player.GetY() < 561) {
 			ccGE::Picture goingUp{ "Assets/Textures/lookingUp.png" };
 			ccGE::Renderer::Draw(goingUp, p_x, p_y, 1);
 			p_y += 10;
@@ -40,6 +42,10 @@ public:
 			ccGE::Picture goingDown{ "Assets/Textures/lookingDown.png" };
 			ccGE::Renderer::Draw(goingDown, p_x, p_y, 1);
 			p_y -= 10;
+		}
+		else {
+			ccGE::Picture defaultPlayer{ "Assets/Textures/lookingRight.png" };
+			ccGE::Renderer::Draw(defaultPlayer, p_x, p_y, 1);
 		}
 
 		ccGE::Picture enemyPic{ chosenEnemy };
@@ -67,7 +73,7 @@ public:
 
 private:
 	ccGE::Unit player{ "Assets/Textures/lookingRight.png" };
-	ccGE::Picture background{ "Assets/Textures/background.png" };
+	ccGE::Picture background{ "Assets/Textures/back.png" };
 	ccGE::Picture gameOver{ "Assets/Textures/game_over.png" };
 	int windowHeight = ccGE::ccGEWindow::GetWindow()->GetHeight();
 	int p_x{ 20 }, p_y{ 400 }, e_x{900}, e_y{200};

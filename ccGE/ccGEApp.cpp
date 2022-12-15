@@ -13,7 +13,7 @@ namespace ccGE
 	ccGEApp::ccGEApp()
 	{
 		ccGEWindow::Init();
-		ccGEWindow::GetWindow()->Create(1000, 800, "TextWindow");
+		ccGEWindow::GetWindow()->Create(1100, 629, "TextWindow");
 
 		Renderer::Init();
 	}
